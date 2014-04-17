@@ -1,0 +1,2 @@
+sensu_check-rspec
+=================
