@@ -13,7 +13,7 @@ parsed["examples"].each do |serverspec_test|
     status = 1
   end
   conn = TCPSocket.new '127.0.0.1', 3030
-  conn.puts "{\"handlers\": [\"default\"], \"name\": \"#{test_name}\", \"output\": \"#{output}\", \"status\": #{status} }"
+  conn.puts %({"handlers": ["default"], "name": "#{test_name}", "output": #{output.to_json}, "status": #{status} })
   conn.close
 end
 
